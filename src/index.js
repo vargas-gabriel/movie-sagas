@@ -12,6 +12,15 @@ import createSagaMiddleware from "redux-saga";
 import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 
+function* addMovie(action) {
+	try {
+		let addResponse = yield axios.post("/api/movie", action.payload);
+		yield put({ type: "SET_MOVIES", payload: addResponse.data });
+		console.log("this is addResponse.data:", addResponse.data);
+	} catch (err) {
+		console.log("add movie error is:", err);
+	}
+}
 function* fetchMovies() {
 	try {
 		let movieResponse = yield axios.get("/api/movie");
@@ -44,6 +53,7 @@ function* rootSaga() {
 	yield takeEvery("FETCH_MOVIES", fetchMovies);
 	yield takeEvery("FETCH_GENRES", fetchGenres);
 	yield takeEvery("FETCH_IND_MOVIE", fetchIndMovie);
+	yield takeEvery("ADD_MOVIE", addMovie);
 }
 
 // Create sagaMiddleware

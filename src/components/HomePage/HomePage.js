@@ -12,11 +12,9 @@ class HomePage extends Component {
 	getMovies = () => {
 		console.log("getting movies, yo");
 		this.props.dispatch({ type: "FETCH_MOVIES" });
-		this.props.dispatch({ type: "FETCH_GENRES" });
 	};
 	//on image click, sends user to details page, send this movie info to details
 	render() {
-		console.log(this.props.reduxState);
 		return (
 			<div>
 				<ul>

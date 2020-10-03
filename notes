@@ -22,19 +22,21 @@ Friday night
         [x]text area for movie description
         [x]dropdown for the genres
         [x]cancel button brings user to home page
-        []save button 
-            [] updates title & desc in db & 
+        [x]save button 
+            [x] updates title & desc in db & 
             [x] brings user back to home page 
 [x]import components in app.js 
 [x] set up routes for each component
 
 Saturday 
-[] get request to render movies to homepage
-    -api movie post route -- it's been made already
+[x] get request to render movies to homepage
+    get 
 []finish save button in MovieForm component 
     [] updates title & desc in db
-[] finish homepage set up
-    [] clickable poster- user should be brought to the `/details` view.
-    []> Hint : You can make a GET request for a specific movie.
+[x] finish homepage set up
+    [x] clickable poster- user should be brought to the `/details` view.
+    [x]> Hint : You can make a GET request for a specific movie.
 
+Sunday
+[] Style it!
 

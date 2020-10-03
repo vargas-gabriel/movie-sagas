@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require("../modules/pool");
 
 router.post("/", (req, res) => {
-	console.log(req.body);
+	console.log("this is req.body:", req.body);
 	// RETURNING "id" will give us back the id of the created movie
 	const insertMovieQuery = `
   INSERT INTO "movies" ("title", "poster", "description")
@@ -36,14 +36,14 @@ router.post("/", (req, res) => {
 				})
 				.catch((err) => {
 					// catch for second query
-					console.log(err);
+					console.log("error second query", err);
 					res.sendStatus(500);
 				});
 
 			// Catch for first query
 		})
 		.catch((err) => {
-			console.log(err);
+			console.log("error first query", err);
 			res.sendStatus(500);
 		});
 });
