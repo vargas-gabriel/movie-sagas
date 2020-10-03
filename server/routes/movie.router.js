@@ -63,11 +63,15 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
 	console.log("in get request movie details", req.params.id);
-	let query = 'SELECT * FROM "movies" WHERE "id" = $1;';
+	// let query = 'SELECT * FROM "movies" WHERE "id" = $1;';
+	// pool
+	let query =
+		"SELECT * FROM movies JOIN movies_genres ON movies.id = movies_genres.movies_id JOIN genres ON movies_genres.genres_id = genres.id WHERE movies.id = $1;";
 	pool
 		.query(query, [req.params.id])
 		.then((result) => {
 			res.send(result.rows);
+			console.log(result.rows);
 		})
 		.catch((err) => {
 			console.log("error with details query", err);

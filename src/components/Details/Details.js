@@ -19,6 +19,7 @@ class Details extends Component {
 					<div>
 						<div>{movie.title}</div>
 						<img src={movie.poster} />
+						<div>Genre: {movie.name}</div>
 						<div>{movie.description}</div>
 					</div>
 				))}
