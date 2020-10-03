@@ -2,15 +2,15 @@ to do list:
 
 Friday night
 
-[] take 10 minutes and look through existing code
-[] install dependencies 
-    [] `npm install`
-    [] `npm run server`
-    [] `npm run client`
-[] set up database and tables
+[x] take 10 minutes and look through existing code
+[x] install dependencies 
+    [x] `npm install`
+    [x] `npm run server`
+    [x] `npm run client`
+[x] set up database and tables
  `saga_movies_weekend`
-    [] provided tables
-    [] create junction table
+    [x] provided tables
+    [x] create junction table
 []set up new pages (components)
     - home page 
     - details page 
@@ -24,6 +24,7 @@ Friday night
         []cancel button brings user to home page
         []save button updates title & desc in db & brings
             user back to home page 
+[]import components in app.js and set up routes 
 [] set up routes for each component
 
 Saturday 
