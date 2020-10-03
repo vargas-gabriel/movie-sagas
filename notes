@@ -14,18 +14,19 @@ Friday night
 []set up new pages (components)
     - home page 
     - details page 
-        []back to list button
-            -brings user to home page
+        [x]back to list button
+            [x] brings user to home page
     - add movie page 
-        []input field for movie title
-        []input field for movie poster image url
-        []text area for movie description
-        []dropdown for the genres
-        []cancel button brings user to home page
-        []save button updates title & desc in db & brings
-            user back to home page 
-[]import components in app.js and set up routes 
-[] set up routes for each component
+        [x]input field for movie title
+        [x]input field for movie poster image url
+        [x]text area for movie description
+        [x]dropdown for the genres
+        [x]cancel button brings user to home page
+        []save button 
+            [] updates title & desc in db & 
+            [x] brings user back to home page 
+[x]import components in app.js 
+[x] set up routes for each component
 
 Saturday 
 
