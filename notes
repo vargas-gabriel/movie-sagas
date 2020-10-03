@@ -1,0 +1,31 @@
+to do list:
+
+Friday night
+
+[] take 10 minutes and look through existing code
+[] install dependencies 
+    [] `npm install`
+    [] `npm run server`
+    [] `npm run client`
+[] set up database and tables
+ `saga_movies_weekend`
+    [] provided tables
+    [] create junction table
+[]set up new pages (components)
+    - home page 
+    - details page 
+        []back to list button
+            -brings user to home page
+    - add movie page 
+        []input field for movie title
+        []input field for movie poster image url
+        []text area for movie description
+        []dropdown for the genres
+        []cancel button brings user to home page
+        []save button updates title & desc in db & brings
+            user back to home page 
+[] set up routes for each component
+
+Saturday 
+
+

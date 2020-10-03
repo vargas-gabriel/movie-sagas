@@ -4,8 +4,6 @@ For this weekend challenge you'll be building a movie management application!
 
 We'll be able to see movies that exist in our DB. We'll also be able to see detailed view for each individual movie, including genres associated with that movie. We'll also be able to add a new movie's information.
 
-
-
 ## Database Setup
 
 1. Create a database named `saga_movies_weekend`
@@ -21,12 +19,15 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 ## Notes
 
 ### Genres
+
 We've given you some starter genres in the database. Feel free to change or add some with Postico. You'll need to write out the whole GET flow to get the genres from your database to your client.
- 
+
 ### Movies
+
 We've added some movie posters in the `public/images` folder, and the database is set up to use them.
 
 ### Relationships
+
 Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
 ## Feature List
@@ -41,12 +42,11 @@ This should display all of the movies in the movie database. When a movie poster
 
 This should show all details **including genres**, for the selected movie.
 
- > Hint : You can make a GET request for a specific movie.
+> Hint : You can make a GET request for a specific movie.
 
 The details page should have the button:
 
 - `Back to List` button, which should bring the user to the Home Page
-
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
@@ -56,7 +56,7 @@ This should show:
 
 - an input field (for the movie title)
 - an input field (for the movie poster image URL))
-- a textarea (for the movie description)
+- a text area (for the movie description)
 - a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
@@ -69,24 +69,22 @@ The Add Movie page should have the buttons:
 
 > Base functionality does not require being able to select more than one genre for a new movie
 
-
 ### General Tasks
 
 As one of your last projects, it's possible you will be sharing this with employers, so be sure to follow best practices and make it look good!
 
 - [ ] Invest some time in styling it up!
-    - [ ] Research cards for your movie posters on the list page
-    - [ ] Research grids for your movie posters on the Movie List page
+  - [ ] Research cards for your movie posters on the list page
+  - [ ] Research grids for your movie posters on the Movie List page
 - [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
 - [ ] Comment your code.
 - [ ] Update this README to include a description of the project in your own words.
 
 ## Stretch Goals
 
-
 ### Edit Page (Stretch)
-Add to the detail page an edit button that brings the user to the edit page.
 
+Add to the detail page an edit button that brings the user to the edit page.
 
 This new page should show:
 
