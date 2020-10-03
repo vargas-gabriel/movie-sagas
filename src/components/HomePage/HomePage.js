@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import HomeListItem from "../HomeListItem/HomeListItem";
 
 class HomePage extends Component {
 	componentDidMount() {
@@ -12,17 +13,14 @@ class HomePage extends Component {
 		console.log("getting movies, yo");
 		this.props.dispatch({ type: "FETCH_MOVIES" });
 	};
+	//on image click, sends user to details page, send this movie info to details
 	render() {
 		console.log(this.props.reduxState);
 		return (
 			<div>
-				<h1>We're in HomePage!</h1>
 				<ul>
 					{this.props.reduxState.map((movie) => (
-						<li key={movie.id}>
-							Movie: {movie.title} Description: {movie.description}{" "}
-							{movie.poster}
-						</li>
+						<HomeListItem key={movie.id} movie={movie} />
 					))}
 				</ul>
 			</div>
@@ -34,5 +32,6 @@ const mapStateToProps = (reduxState) => ({
 	title: reduxState.movies.title,
 	poster: reduxState.movies.poster,
 	description: reduxState.movies.description,
+	id: reduxState.movies.id,
 });
 export default connect(mapStateToProps)(withRouter(HomePage));

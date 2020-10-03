@@ -21,9 +21,29 @@ function* fetchMovies() {
 	}
 }
 
+function* fetchGenres() {
+	try {
+		let genreResponse = yield axios.get("/api/genre");
+		yield put({ type: "SET_GENRES", payload: genreResponse.data });
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+function* fetchIndMovie(action) {
+	try {
+		let indMovieResponse = yield axios.get(action.url);
+		yield put({ type: "SET_IND", payload: indMovieResponse.data });
+	} catch (err) {
+		console.log(err);
+	}
+}
+
 // Create the rootSaga generator function
 function* rootSaga() {
 	yield takeEvery("FETCH_MOVIES", fetchMovies);
+	yield takeEvery("FETCH_GENRES", fetchGenres);
+	yield takeEvery("FETCH_IND_MOVIE", fetchIndMovie);
 }
 
 // Create sagaMiddleware
@@ -33,6 +53,15 @@ const sagaMiddleware = createSagaMiddleware();
 const movies = (state = [], action) => {
 	switch (action.type) {
 		case "SET_MOVIES":
+			return action.payload;
+		default:
+			return state;
+	}
+};
+
+const indMov = (state = [], action) => {
+	switch (action.type) {
+		case "SET_IND":
 			return action.payload;
 		default:
 			return state;
@@ -54,6 +83,7 @@ const storeInstance = createStore(
 	combineReducers({
 		movies,
 		genres,
+		indMov,
 	}),
 	// Add sagaMiddleware to our store
 	applyMiddleware(sagaMiddleware, logger)
