@@ -29,5 +29,12 @@ Friday night
 [x] set up routes for each component
 
 Saturday 
+[] get request to render movies to homepage
+    -api movie post route -- it's been made already
+[]finish save button in MovieForm component 
+    [] updates title & desc in db
+[] finish homepage set up
+    [] clickable poster- user should be brought to the `/details` view.
+    []> Hint : You can make a GET request for a specific movie.
 
 

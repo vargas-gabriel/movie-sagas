@@ -3,10 +3,12 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 class MovieForm extends Component {
+	//brings user back to homepage
 	cancel = () => {
 		console.log("canceled, going back home");
 		this.props.history.push("/");
 	};
+	//saves user input-sends to db, then sends user back to homepage
 	saveMovie = () => {
 		console.log("saving movie");
 		this.props.history.push("/");
