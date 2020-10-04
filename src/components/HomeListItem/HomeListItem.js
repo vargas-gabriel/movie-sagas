@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-
+import "./HomeListItem.css";
+import Card from "@material-ui/core/Card";
 class HomeListItem extends Component {
 	componentDidMount() {}
+
 	sendToDeets = () => {
 		console.log("movie id is:", this.props.movie.id);
 		this.props.dispatch({
@@ -12,14 +14,19 @@ class HomeListItem extends Component {
 		});
 		this.props.history.push("/Details");
 	};
+
 	render() {
 		return (
 			<div>
-				<img
-					onClick={this.sendToDeets}
-					src={this.props.movie.poster}
-					alt={this.props.movie.title}
-				/>
+				<div className='div'>
+					<Card variant='outlined'>
+						<img
+							onClick={this.sendToDeets}
+							src={this.props.movie.poster}
+							alt={this.props.movie.title}
+						/>
+					</Card>
+				</div>
 			</div>
 		);
 	}

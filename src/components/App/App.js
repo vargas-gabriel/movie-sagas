@@ -11,7 +11,18 @@ class App extends Component {
 		return (
 			<Router>
 				<div className='App'>
-					<h1>Movies</h1>
+					<header className='App-header'>
+						<h1>Movies</h1>
+					</header>
+					<nav>
+						<main>
+							<ul>
+								<li>
+									<Link to='/MovieForm'>Add a Movie</Link>
+								</li>
+							</ul>
+						</main>
+					</nav>
 					<Route path='/' exact>
 						<HomePage />
 					</Route>

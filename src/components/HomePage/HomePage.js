@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import HomeListItem from "../HomeListItem/HomeListItem";
-
+import "./HomePage.css";
 class HomePage extends Component {
 	componentDidMount() {
 		console.log("component mounted homepage");
@@ -17,7 +17,7 @@ class HomePage extends Component {
 	render() {
 		console.log("this is the props:", this.props.reduxState);
 		return (
-			<div>
+			<div className='HomePage'>
 				<ul>
 					{this.props.reduxState.map((movie) => (
 						<HomeListItem key={movie.id} movie={movie} />

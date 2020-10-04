@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
 class MovieForm extends Component {
 	state = {
 		title: "",
@@ -53,25 +55,28 @@ class MovieForm extends Component {
 	render() {
 		return (
 			<div>
-				<h1>We're in MovieForm!</h1>
+				<h1>Add a Movie to Your List</h1>
 				<form onSubmit={this.saveMovie}>
-					<input
+					<TextField
 						required
 						type='text'
 						placeholder='Title'
-						onChange={this.handleTitleChange}></input>
-					<input
+						variant='outlined'
+						onChange={this.handleTitleChange}></TextField>
+					<TextField
 						required
 						type='text'
 						placeholder='Poster'
-						onChange={this.handlePosterChange}></input>
-					<textarea
+						variant='outlined'
+						onChange={this.handlePosterChange}></TextField>
+					<TextField
 						required
 						id='movieDesc'
-						name='Description'
-						placeholder='Movie Description'
-						onChange={this.handleDescriptionChange}></textarea>
-					<select
+						label='Movie Description'
+						variant='outlined'
+						onChange={this.handleDescriptionChange}
+					/>
+					<Select
 						value={this.state.genre}
 						required
 						name='Pick Genre'
@@ -93,9 +98,13 @@ class MovieForm extends Component {
 						<option value={11}>Science Fiction</option>
 						<option value={12}>Space-Opera</option>
 						<option value={13}>Superhero</option>
-					</select>
-					<button onClick={this.cancel}>Cancel</button>
-					<button type='submit'>Save</button>
+					</Select>
+					<Button variant='contained' color='secondary' onClick={this.cancel}>
+						Cancel
+					</Button>
+					<Button variant='contained' color='primary' type='submit'>
+						Save
+					</Button>
 				</form>
 			</div>
 		);

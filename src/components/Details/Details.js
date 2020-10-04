@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-
+import "./Details.css";
+import Button from "@material-ui/core/Button";
 class Details extends Component {
 	componentDidMount() {
 		this.props.dispatch({ type: "FETCH_IND_MOVIE" });
@@ -20,9 +21,14 @@ class Details extends Component {
 						<img src={movie.poster} />
 						<div>Genre: {movie.name}</div>
 						<div>{movie.description}</div>
+						<Button
+							variant='contained'
+							color='secondary'
+							onClick={this.backToList}>
+							Back to List
+						</Button>
 					</div>
 				))}
-				<button onClick={this.backToList}>Back to List</button>
 			</div>
 		);
 	}
