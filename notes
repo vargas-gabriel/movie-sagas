@@ -31,8 +31,8 @@ Friday night
 Saturday 
 [x] get request to render movies to homepage
     get 
-[]finish save button in MovieForm component 
-    [] updates title & desc in db
+[x]finish save button in MovieForm component 
+    [x] updates title & desc in db
 [x] finish homepage set up
     [x] clickable poster- user should be brought to the `/details` view.
     [x]> Hint : You can make a GET request for a specific movie.

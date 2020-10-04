@@ -15,6 +15,7 @@ class HomePage extends Component {
 	};
 	//on image click, sends user to details page, send this movie info to details
 	render() {
+		console.log("this is the props:", this.props.reduxState);
 		return (
 			<div>
 				<ul>
@@ -28,9 +29,5 @@ class HomePage extends Component {
 }
 const mapStateToProps = (reduxState) => ({
 	reduxState: reduxState.movies,
-	title: reduxState.movies.title,
-	poster: reduxState.movies.poster,
-	description: reduxState.movies.description,
-	id: reduxState.movies.id,
 });
 export default connect(mapStateToProps)(withRouter(HomePage));

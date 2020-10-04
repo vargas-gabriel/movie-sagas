@@ -19,7 +19,7 @@ router.post("/", (req, res) => {
 		])
 		.then((result) => {
 			console.log("New Movie Id:", result.rows[0].id); //ID IS HERE!
-
+			console.log(req.body.genre);
 			const createdMovieId = result.rows[0].id;
 
 			// Depending on how you make your junction table, this insert COULD change.
@@ -29,10 +29,13 @@ router.post("/", (req, res) => {
       `;
 			// SECOND QUERY MAKES GENRE FOR THAT NEW MOVIE
 			pool
-				.query(insertMovieGenreQuery, [createdMovieId, req.body.genre_id])
+				// .query(insertMovieGenreQuery, [createdMovieId, req.body.genre_id])
+				.query(insertMovieGenreQuery, [createdMovieId, req.body.genre])
+
 				.then((result) => {
 					//Now that both are done, send back success!
 					res.sendStatus(201);
+					console.log("here is your success message");
 				})
 				.catch((err) => {
 					// catch for second query

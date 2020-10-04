@@ -12,7 +12,6 @@ class Details extends Component {
 		this.props.history.push("/");
 	};
 	render() {
-		console.log(this.props.reduxState);
 		return (
 			<div>
 				{this.props.reduxState.map((movie) => (

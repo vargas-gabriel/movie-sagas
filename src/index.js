@@ -15,12 +15,22 @@ import axios from "axios";
 function* addMovie(action) {
 	try {
 		let addResponse = yield axios.post("/api/movie", action.payload);
-		yield put({ type: "SET_MOVIES", payload: addResponse.data });
+		console.log("this is the payload:", action.payload);
+		yield put({ type: "FETCH_MOVIES" });
 		console.log("this is addResponse.data:", addResponse.data);
 	} catch (err) {
 		console.log("add movie error is:", err);
 	}
 }
+// 	function* addPet(action) {
+// 		try {
+// 		  yield axios.post('/api/pets', action.payload);
+// 		  yield put ({type: 'FETCH_PETS'});
+// 		} catch(err) {
+// 		  console.log(err);
+// 		}
+// 	  }
+// }
 function* fetchMovies() {
 	try {
 		let movieResponse = yield axios.get("/api/movie");
@@ -29,6 +39,14 @@ function* fetchMovies() {
 		console.log(err);
 	}
 }
+// function* fetchPets() {
+// 	try {
+// 	  let petsResponse = yield axios.get('/api/pets');
+// 	  yield put({type: 'SET_PETS', payload: petsResponse.data });
+// 	} catch(err) {
+// 	  console.log(err);
+// 	}
+//   }
 
 function* fetchGenres() {
 	try {

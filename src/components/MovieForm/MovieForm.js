@@ -7,7 +7,7 @@ class MovieForm extends Component {
 		title: "",
 		poster: "",
 		description: "",
-		genre: "",
+		genre: 0,
 	};
 	//setState functions
 	handleDescriptionChange = (event) => {
@@ -42,8 +42,13 @@ class MovieForm extends Component {
 	//saves user input-sends to db, then sends user back to homepage
 	saveMovie = () => {
 		console.log("saving movie", this.state);
-		this.props.history.push("/");
+		// this.props.history.push("/");
 		this.props.dispatch({ type: "ADD_MOVIE", payload: this.state });
+		console.log(this.state);
+		this.backHome();
+	};
+	backHome = () => {
+		this.props.history.push("/");
 	};
 	render() {
 		return (
@@ -72,19 +77,22 @@ class MovieForm extends Component {
 						name='Pick Genre'
 						placeholder='Pick Genre'
 						onChange={this.handleGenreChange}>
-						<option>Adventure</option>
-						<option>Animated</option>
-						<option>Biographical</option>
-						<option>Comedy</option>
-						<option>Disaster</option>
-						<option>Drama</option>
-						<option>Epic</option>
-						<option>Fantasy</option>
-						<option>Musical</option>
-						<option>Romantic</option>
-						<option>Science Fiction</option>
-						<option>Space-Opera</option>
-						<option>Superhero</option>
+						<option disabled value='0'>
+							Pick Genre
+						</option>
+						<option value={1}>Adventure</option>
+						<option value={2}>Animated</option>
+						<option value={3}>Biographical</option>
+						<option value={4}>Comedy</option>
+						<option value={5}>Disaster</option>
+						<option value={6}>Drama</option>
+						<option value={7}>Epic</option>
+						<option value={8}>Fantasy</option>
+						<option value={9}>Musical</option>
+						<option value={10}>Romantic</option>
+						<option value={11}>Science Fiction</option>
+						<option value={12}>Space-Opera</option>
+						<option value={13}>Superhero</option>
 					</select>
 					<button onClick={this.cancel}>Cancel</button>
 					<button type='submit'>Save</button>
