@@ -18,6 +18,11 @@ class App extends Component {
 						<main>
 							<ul>
 								<li>
+									<Link to='/' exact>
+										Home
+									</Link>
+								</li>
+								<li>
 									<Link to='/MovieForm'>Add a Movie</Link>
 								</li>
 							</ul>
