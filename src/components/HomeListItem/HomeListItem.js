@@ -6,7 +6,7 @@ import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
 class HomeListItem extends Component {
 	componentDidMount() {}
-
+	//on image click, sends user to details page, sends this movie info to details
 	sendToDeets = () => {
 		console.log("movie id is:", this.props.movie.id);
 		this.props.dispatch({

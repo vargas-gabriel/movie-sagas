@@ -44,11 +44,11 @@ class MovieForm extends Component {
 	//saves user input-sends to db, then sends user back to homepage
 	saveMovie = () => {
 		console.log("saving movie", this.state);
-		// this.props.history.push("/");
 		this.props.dispatch({ type: "ADD_MOVIE", payload: this.state });
 		console.log(this.state);
 		this.backHome();
 	};
+	//sends user back to homepage
 	backHome = () => {
 		this.props.history.push("/");
 	};

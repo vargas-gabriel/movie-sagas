@@ -12,6 +12,7 @@ import createSagaMiddleware from "redux-saga";
 import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 
+//adds movie to db
 function* addMovie(action) {
 	try {
 		let addResponse = yield axios.post("/api/movie", action.payload);
@@ -22,15 +23,7 @@ function* addMovie(action) {
 		console.log("add movie error is:", err);
 	}
 }
-// 	function* addPet(action) {
-// 		try {
-// 		  yield axios.post('/api/pets', action.payload);
-// 		  yield put ({type: 'FETCH_PETS'});
-// 		} catch(err) {
-// 		  console.log(err);
-// 		}
-// 	  }
-// }
+//fetches all movies
 function* fetchMovies() {
 	try {
 		let movieResponse = yield axios.get("/api/movie");
@@ -39,15 +32,8 @@ function* fetchMovies() {
 		console.log(err);
 	}
 }
-// function* fetchPets() {
-// 	try {
-// 	  let petsResponse = yield axios.get('/api/pets');
-// 	  yield put({type: 'SET_PETS', payload: petsResponse.data });
-// 	} catch(err) {
-// 	  console.log(err);
-// 	}
-//   }
 
+//fetches genres for details page
 function* fetchGenres() {
 	try {
 		let genreResponse = yield axios.get("/api/genre");
@@ -56,7 +42,7 @@ function* fetchGenres() {
 		console.log(err);
 	}
 }
-
+//fetches movie that was clicked on
 function* fetchIndMovie(action) {
 	try {
 		let indMovieResponse = yield axios.get(action.url);
@@ -86,7 +72,7 @@ const movies = (state = [], action) => {
 			return state;
 	}
 };
-
+//stores individual movie that was clicked on
 const indMov = (state = [], action) => {
 	switch (action.type) {
 		case "SET_IND":
