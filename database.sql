@@ -55,3 +55,13 @@ VALUES
 ('Science Fiction'),
 ('Space-Opera'),
 ('Superhero');
+
+
+--Query to add info to juction table 
+INSERT INTO "movies_genres" ("movies_id", "genres_id")
+VALUES (14, 4);
+--Query for junction table join:
+SELECT * FROM movies JOIN movies_genres ON movies.id
+ = movies_genres.movies_id JOIN genres ON
+  movies_genres.genres_id = genres.id WHERE movies.id = $1;";
+
