@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require("../modules/pool");
 
 router.get("/", (req, res) => {
-	// Add query to get all genres
+	// query to get all genres
 	let query = 'SELECT * FROM "genres"';
 	pool
 		.query(query)
