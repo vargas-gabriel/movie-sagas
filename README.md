@@ -14,7 +14,7 @@ Displays a list of movies with a description and official poster.
 
 ## Installation
 
-- Create a database named saga_movies_weekend
+- Create a database named `saga_movies_weekend`
 - Use the queries in the database.sql file to set up your database
 - Run `npm install` from the project terminal
 - Run `npm run server`
