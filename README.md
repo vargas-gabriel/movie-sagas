@@ -27,8 +27,7 @@ Displays a list of movies with a description and official poster.
 - The details page allows a user to view a description of the movie as well
   as the genre. The user can navigate back to the home screen by clicking the
   back to list button.
-- The add movie page allows a user to a movie of their choice to the list. All
-  input fields along with the dropdown selector must be filled out in order to
+- The add movies page allows a user to add a movie of their choice to the list. All input fields along with the dropdown selector must be filled out in order to
   successfully add a movie to the list.
 
 ## Built With
