@@ -65,3 +65,12 @@ SELECT * FROM movies JOIN movies_genres ON movies.id
  = movies_genres.movies_id JOIN genres ON
   movies_genres.genres_id = genres.id WHERE movies.id = $1;";
 
+SELECT * FROM "species" JOIN "junction" ON "species"."id" = "junction"."species_id" 
+JOIN "class" ON "junction"."class_id" = "class"."id";
+INSERT INTO "junction" ("species_id", "class_id")
+VALUES (1, 4), (2, 4), (3, 5), (4, 5), (5, 5), (6, 3), (7, 2), 
+(8, 2), (9, 2), (10, 2), (11, 2), (12, 2), (13, 1), (14, 1), (15, 1), 
+(16, 1), (17, 1), (18, 1), (19, 1), (20, 1);
+
+SELECT * FROM "meals" JOIN "junction" ON "species"."id" = "junction"."species_id" 
+JOIN "class" ON "junction"."class_id" = "class"."id";

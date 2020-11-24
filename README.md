@@ -2,6 +2,18 @@
 
 Movie Saga App
 
+## Duration
+
+Weekend project
+
+## Prerequisites
+
+Before you get started, make sure you have the following software installed on your computer:
+
+- [Node.js](https://nodejs.org/en/)
+- [PostrgeSQL](https://www.postgresql.org/)
+- [Nodemon](https://nodemon.io/)
+
 ## Description
 
 Displays a list of movies with a description and official poster.
