@@ -47,3 +47,4 @@ Displays a list of movies with a description and official poster.
 - Node.js
 - React.js
 - Axios
+- Material UI
