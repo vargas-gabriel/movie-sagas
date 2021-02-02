@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./Details.css";
 import Button from "@material-ui/core/Button";
 class Details extends Component {
+	//componentdidmount
 	componentDidMount() {
 		this.props.dispatch({ type: "FETCH_IND_MOVIE" });
 	}
